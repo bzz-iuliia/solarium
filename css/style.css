@@ -6,6 +6,7 @@
     --accent-color:#FDD34D;
     --main-color:#FFF;
     --btn-txt: #FFF0E7;
+    --advantages-bg: #F6F6F6;
 }
 
 
@@ -86,4 +87,234 @@ text-transform: uppercase;
 border-radius: 9999px;
 background: var(--active-color);
 padding: 12px 32px;
+}
+
+/* section hero */
+
+.hero{
+    padding-top: 160px;
+    padding-bottom: 160px;
+}
+
+.hero .container{
+    display: flex;
+}
+
+.hero-text{
+    color: var(--hero-color);
+    font-family: "Be Vietnam Pro";
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.33;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 9999px;
+    background: var(--accent-color);
+    width: 200px;
+    margin-bottom: 32px;
+}
+
+.hero-title{
+    align-self: stretch;
+    color: #2D2F2F;
+    font-family: "Space Grotesk";
+    font-size: 120px;
+    font-weight: 700;
+    line-height: 117px;
+    letter-spacing: -6.4px;
+
+}
+
+.hero-span{
+    background: linear-gradient(90deg, #8D4A00 0%, #FE973C 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-description{
+    color: var(--text-color);
+    font-family: "Be Vietnam Pro";
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.33;
+    width: 576px;
+    margin-bottom: 32px;
+}
+.hero-list{
+    display: flex;
+    gap: 24px;
+}
+.hero-item:first-child .hero-button{
+    padding: 20px 40px;
+    border-radius: 9999px;
+    background: var(--active-color);
+    color: var(--btn-txt);
+    text-align: center;
+    font-family: "Space Grotesk";
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.42;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+
+.hero-item:last-child  .hero-button{
+        padding: 21px 40px;
+        border-radius: 9999px;
+        border: 1px solid rgba(172, 173, 173, 0.20);
+        background: #FFF;
+        color: #2D2F2F;
+        text-align: center;
+        font-family: "Space Grotesk";
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1.42;
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+}
+
+.hero-items{
+    position: relative;
+}
+
+.hero-elem:first-child .hero-img{
+    width: 480px;
+    height: 605px;
+    border-radius: 48px;
+}
+
+.hero-elem:first-child{
+    transform: rotate(3deg);
+}
+
+.hero-elem:last-child{
+    position: absolute;
+    bottom: -150px;
+    left: -100px;
+    transform: rotate(-6deg);
+}
+
+/* advantages */
+
+.advantages{
+    background-color: var(--advantages-bg);
+    padding-top: 128px;
+    padding-bottom: 128px;
+}
+
+.advantages .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.advantages-title{
+    align-self: stretch;
+color: var(--title-color);
+font-family: "Space Grotesk";
+font-size: 60px;
+font-style: normal;
+font-weight: 700;
+line-height: 1;
+letter-spacing: -3px;
+margin-bottom: 39px;
+}
+
+.advantages-box{
+    width: 550px;
+}
+
+.advantages-text{
+color: var(--text-color);
+font-family: "Be Vietnam Pro";
+font-size: 20px;
+font-style: normal;
+font-weight: 300;
+line-height: 1.62;
+margin-bottom: 39px;
+
+}
+
+.advantages-span{
+    color: var(--title-color);
+font-family: "Be Vietnam Pro";
+font-weight: 500;
+border-bottom: 4px solid var(--accent-color);
+}
+
+.advantages-desc{
+color: var(--title-color);
+font-family: "Space Grotesk";
+font-size: 24px;
+font-style: normal;
+font-weight: 500;
+line-height: 1.33;
+display: flex;
+align-items: center;
+}
+
+.advantages-desc::before{
+    content: "";
+    display: block;
+    margin-right: 32px;
+    height: 113.0px;
+    width: 8px;
+    background-color: var(--active-color);
+}
+
+.advantages-comment{
+}
+
+
+.advantages-list{
+    margin-top: 39px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.advantages-description{
+color: var(--title-color);
+font-family: "Space Grotesk";
+font-size: 14px;
+font-weight: 700;
+line-height: 1.42;
+letter-spacing: 1.4px;
+text-transform: uppercase;
+display: flex;
+align-items: center;
+gap: 16px;
+
+}
+
+.advantages-description::before{
+    content: "";
+    display: block;
+    width: 32.0px;
+height: 2.0px;
+background-color: var(--accent-color);
+
+}
+
+.advantages-img{
+    width: 552.0px;
+height: 736.0px;
+border-radius: 48px;
+}
+
+.advantages-img::before{
+    content: "123";
+    width: 160.0px;
+height: 160.0px;
+/* position: absolute; */
+right: -40px;
+top: -40px;
+border-radius: 9999px;
+background: rgba(253, 211, 77, 0.20);
+filter: blur(32px);
+background-color: red;
+display: block;
 }
