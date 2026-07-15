@@ -23,9 +23,17 @@ body{
 }
 
 
+/* header */
+
 .header{
     padding-top: 24px;
     padding-bottom: 24px;
+    position: fixed;
+    top: 0;          
+    left: 0;          
+    width: 100%;       
+    z-index: 100;     
+    background-color: #ffffff;
 }
 
 
@@ -87,6 +95,11 @@ text-transform: uppercase;
 border-radius: 9999px;
 background: var(--active-color);
 padding: 12px 32px;
+transition: background-color 0.3s ease;
+}
+
+.header-button:hover{
+    opacity: 0.9;
 }
 
 /* section hero */
@@ -98,6 +111,7 @@ padding: 12px 32px;
 
 .hero .container{
     display: flex;
+    background: radial-gradient(85.61% 61.6% at 50% 50%, rgba(253, 211, 77, 0.15) 0%, rgba(253, 211, 77, 0.00) 70%);
 }
 
 .hero-text{
@@ -355,9 +369,29 @@ display: block;
 
 /* gallery */
 
-.gallery-title{
-
+.gallery{
     display: block;
+}
+
+.gallery .container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding-top: 128px;
+
+}
+
+.gallery-title{
+color: var(--title-color);
+font-family: "Space Grotesk";
+font-size: 60px;
+font-style: normal;
+font-weight: 900;
+line-height: 1;
+letter-spacing: -3px;
+    display: block;
+    padding-bottom: 16px;
 }
 
 .gallery-text {
@@ -366,6 +400,8 @@ display: block;
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
+    width: 399.0px;
+
 }
 
 .gallery-link {
@@ -376,6 +412,7 @@ display: block;
     line-height: 20px;
     letter-spacing: 1.42px;
     text-transform: uppercase;
+    margin-left: auto;
 }
 
 .gallery-box {
@@ -388,6 +425,7 @@ display: block;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
+
 }
 
 .gallery-item:first-child {
@@ -401,9 +439,63 @@ display: block;
 }
 
 .gallery-img{
+    
+    width: 100%;
+    height: auto;
+    
+}
+
+.gallery-item{
+    position: relative;
+    overflow: hidden;
     border-radius: 48px;
 }
 
+.gallery-item::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+}
+
+.card-over{
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3 ease;
+}
+
+.gallery-item:hover::after{
+    opacity: 1;
+}
+
+.gallery-item:hover .card-over{
+    opacity: 1;
+}
+
+.card-title{
+color: var(--main-color);
+font-family: "Space Grotesk";
+font-size: 30px;
+font-style: normal;
+font-weight: 700;
+line-height: 1.2;
+letter-spacing: -1.5px;
+}
+
+.card-txt{
+    color: var(--accent-color);
+    font-family: "Space Grotesk";
+}
 
 /* table */
 
@@ -703,4 +795,337 @@ line-height: 1.42;
     border-radius: 9999px;
     display: flex;
     justify-content: center;
+}
+
+
+/* section join */
+
+.join{
+    padding-top: 128px;
+    padding-bottom: 128px;
+}
+
+.join .container{
+    border-radius: 48px;
+border-color: linear-gradient(135deg, #8D4A00 0%, #7C4000 100%);
+padding-left: 80px;
+padding-right: 80px;
+padding-top: 80px;
+padding-bottom: 86px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.join-title{
+    width: 456.0px;
+align-self: stretch;
+color: #2D2F2F;
+font-family: "Space Grotesk";
+font-size: 60px;
+font-style: normal;
+font-weight: 700;
+line-height: 1;
+letter-spacing: -3px;
+margin-bottom: 24px;
+}
+
+.join-text{
+    width: 456.0px;
+align-self: stretch;
+color: #5A5C5C;
+font-family: "Be Vietnam Pro";
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 29.25px;
+margin-bottom: 24px;
+}
+
+.join-list{
+    display: flex;
+
+}
+
+.join-icon{
+    width: 36.0px;
+height: 36.0px;
+border-radius: 9999px;
+}
+
+.join-item{
+    width: 48.0px;
+height: 48.0px;
+border-radius: 50%;
+justify-content: center;
+display: flex;
+align-items: center;
+border: 2px solid #FE973C;
+}
+
+.join-item:nth-child(2){
+    transform: translateX(-10px);
+    background-color: #fff;
+}
+
+.join-item:nth-child(3){
+    transform: translateX(-20px);
+    background-color: #fff;
+}
+
+.join-box{
+    display: flex;
+    align-items: center;
+    gap: inherit;
+}
+
+.join-members{
+color: #5A5C5C;
+font-family: "Be Vietnam Pro";
+font-size: 14px;
+font-style: normal;
+font-weight: 1.42;
+line-height: 20px;
+width: 118.6px;
+}
+
+.join-form{
+    width: 456.0px;
+
+}
+
+.join-label{
+    display: block;
+    color: #8c9090;
+}
+
+.join-input{
+    display: block;
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    border: none;
+    background-color: rgba(133, 132, 132, 0.512);
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.join-button{
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    background-color: black;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.join-desk{
+    text-align: center;
+    color: #8c9090;
+}
+
+/* footer */
+
+footer{
+    background-color: var(--advantages-bg);
+}
+
+footer .container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 64px 80px;
+}
+
+
+.footer-logo{
+color: var(--title-color);
+font-size: 24px;
+font-weight: 900;
+line-height: 1.33;
+letter-spacing: -1.2px;
+}
+
+.footer-list{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.footer-link{
+color: var(--text-color);
+font-family: "Be Vietnam Pro";
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 1.43;
+letter-spacing: 0.35px;
+}
+
+.footer-txt{
+color: var(--text-color);
+font-family: "Be Vietnam Pro";
+font-size: 10px;
+font-style: normal;
+font-weight: 500;
+line-height: 2;
+letter-spacing: 2px;
+text-transform: uppercase;
+}
+
+/* МОДАЛЬНЕ */
+
+
+.modal-window{
+    background-color: var(--main-color);
+    width: 90%;
+    max-width: 380px;
+    padding: 40px 24px;
+    border-radius: 32px;
+    position: relative;
+    box-shadow: 0 15px 49px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.modal-close{
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    font-size: 28px;
+    color: #aaaaaa;
+    line-height: 1;
+}
+
+.modal-close:hover{
+    color: #333333;
+}
+
+
+.modal-box{
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 16px;
+    border: 2px dashed #e0e0e0;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-img{
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+.modal-badge{
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: #000000;
+    font-size: 10px;
+    font-weight: 800;
+padding: 4px 12px;
+border-radius: 20px;
+letter-spacing: 1px;
+margin-bottom: 12px;
+}
+
+.modal-title {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    margin: 0 0 8px 0;
+    color: #111111;
+}
+
+.modal-desc {
+    font-size: 13px;
+    color: #666666;
+    line-height: 1.5;
+    margin: 0 0 24px 0;
+}
+
+.modal-discount {
+    background: linear-gradient(135deg, #fff5e6, #ffebd6);
+    padding: 16px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+}
+
+.modal-discount h3 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #ff6600;
+    margin: 0;
+}
+
+.modal-discount p {
+    font-size: 11px;
+    font-weight: 700;
+    color: #a36633;
+    margin: 4px 0 0 0;
+    letter-spacing: 0.5px;
+}
+
+.modal-code {
+    border: 2px solid #e0e0e0;
+    padding: 12px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 14px;
+    color: #333333;
+    background-color: #fafafa;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+.modal-btn {
+    width: 100%;
+    background-color: #cc6633;
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-bottom: 16px;
+}
+
+.modal-btn:hover {
+    background-color: #b35528;
+}
+
+.modal-footer{
+    display: block;
+    font-size: 10px;
+    color: #999999;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+#secret-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+#secret-modal:target {
+    opacity: 1;
+    pointer-events: auto;
 }
